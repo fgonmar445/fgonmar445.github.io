@@ -338,10 +338,18 @@ footer {
   font-size: 0.9rem;
 }
 
+.mobile-break {
+  display: none;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
+  }
+
+  .mobile-break {
+    display: inline;
   }
 
   .typing {
