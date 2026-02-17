@@ -347,6 +347,7 @@ footer {
   .typing {
     font-size: 1.2rem;
     width: 28ch;
+    white-space: normal;
   }
 
   @keyframes typing {
