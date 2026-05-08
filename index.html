@@ -1,176 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - fgonmar445</title>
+    <meta
+      name="description"
+      content="Portfolio de fgonmar445 - Desarrollador web especializado en PHP, Python, Django, Java, MySQL y consumo de API REST."
+    />
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
 
-
-</head>
-
-<body>
+  <body>
+    <!-- NAVEGACIÓN -->
+    <nav>
+      <a href="#" class="logo">fgonmar445</a>
+      <div class="nav-links">
+        <a href="#about">Sobre Mí</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#contact">Contacto</a>
+      </div>
+    </nav>
 
     <!-- HERO -->
-    <section class="hero">
-        <h1>Hola, soy <span style="color:#58a6ff;">fgonmar445</span></h1>
-        <div class="typing">
-            Full‑Stack Developer
-        </div>
+    <header class="hero">
+      <h1>
+        Hola, soy <span style="color: var(--accent-color)">fgonmar445</span>
+      </h1>
+      <div class="typing-container">
+        <span id="typing-text"></span><span class="cursor">|</span>
+      </div>
 
-        <div class="cta-buttons">
-            <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
-            <a href="https://github.com/fgonmar445" class="btn btn-secondary" target="_blank">GitHub</a>
-            <a href="mailto:felipemarbouh@gmail.com" class="btn btn-secondary">Contacto</a>
-        </div>
-    </section>
+      <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">Proyectos</a>
+        <a
+          href="https://github.com/fgonmar445"
+          class="btn btn-secondary"
+          target="_blank"
+          >GitHub</a
+        >
+        <a href="mailto:felipemarbouh@gmail.com" class="btn btn-secondary"
+          >Contacto: felipemarbouh@gmail.com</a
+        >
+      </div>
+    </header>
 
-    <!-- SOBRE MÍ -->
-    <section class="about">
+    <main>
+      <!-- SOBRE MÍ -->
+      <section id="about" class="about">
         <h2>Sobre Mí</h2>
         <p>
-            Soy estudiante de 2º de Desarrollo de Aplicaciones Web con <strong>experiencia práctica</strong>
-            en proyectos reales tanto frontend como backend.
+          Soy estudiante de 2º de Desarrollo de Aplicaciones Web con
+          <strong>experiencia práctica</strong>
+          en proyectos reales tanto frontend como backend.
         </p>
         <p>
-            Me especializo en crear aplicaciones web modernas, responsivas y escalables.
-            Actualmente profundizando en <strong>React, Node.js y arquitecturas cloud</strong>.
+          Me especializo en crear aplicaciones web modernas, responsivas y
+          escalables. Actualmente profundizando en
+          <strong>React, Node.js y arquitecturas cloud</strong>.
         </p>
         <p>
-            <strong>Objetivo:</strong> Convertirme en un desarrollador full-stack senior
-            capaz de liderar proyectos de alto impacto.
+          <strong>Objetivo:</strong> Convertirme en un desarrollador full-stack
+          senior capaz de liderar proyectos de alto impacto.
         </p>
-    </section>
 
-    <!-- ESTADÍSTICAS -->
-    <div class="stats">
-        <div class="stat-item">
+        <!-- ESTADÍSTICAS -->
+        <div class="stats">
+          <div class="stat-item">
             <h3>15+</h3>
             <p>Proyectos Completados</p>
-        </div>
-        <div class="stat-item">
+          </div>
+          <div class="stat-item">
             <h3>4</h3>
             <p>Tecnologías Dominadas</p>
-        </div>
-        <div class="stat-item">
+          </div>
+          <div class="stat-item">
             <h3>150+</h3>
             <p>Commits en GitHub</p>
+          </div>
         </div>
-        <!-- ESTADÍSTICAS 
-        
-        <div class="stat-item">
-            <h3>2</h3>
-            <p>Años de Experiencia</p>
-        </div>-->
+      </section>
 
-    </div>
-
-    <!-- HABILIDADES -->
-    <h2>Mis Habilidades</h2>
-    <div class="skills-grid">
-        <div class="skill-card">
-            <img src="https://skillicons.dev/icons?i=html,css,js,ts" alt="Frontend">
+      <!-- HABILIDADES -->
+      <section id="skills">
+        <h2>Mis Habilidades</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <img
+              src="https://skillicons.dev/icons?i=html,css,js,ts"
+              alt="Frontend"
+            />
             <h4>Frontend</h4>
             <p>HTML5, CSS3, JavaScript ES6+, TypeScript</p>
-        </div>
-        <div class="skill-card">
-            <img src="https://skillicons.dev/icons?i=react,angular,vue" alt="Frameworks">
+          </div>
+          <div class="skill-card">
+            <img
+              src="https://skillicons.dev/icons?i=react,angular,vue"
+              alt="Frameworks"
+            />
             <h4>Frameworks</h4>
             <p>React, Angular, Vue.js</p>
-        </div>
-        <div class="skill-card">
-            <img src="https://skillicons.dev/icons?i=nodejs,php,java,python" alt="Backend">
+          </div>
+          <div class="skill-card">
+            <img
+              src="https://skillicons.dev/icons?i=nodejs,php,java,python"
+              alt="Backend"
+            />
             <h4>Backend</h4>
             <p>Node.js, PHP, Java, Python</p>
-        </div>
-        <div class="skill-card">
-            <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb" alt="Databases">
+          </div>
+          <div class="skill-card">
+            <img
+              src="https://skillicons.dev/icons?i=mysql,postgres,mongodb"
+              alt="Databases"
+            />
             <h4>Bases de Datos</h4>
             <p>MySQL, PostgreSQL, MongoDB</p>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- PROYECTOS -->
-    <h2 id="projects">Proyectos Destacados</h2>
-    <div class="projects">
-
-        <div class="card">
+      <!-- PROYECTOS -->
+      <section id="projects">
+        <h2>Proyectos Destacados</h2>
+        <div class="projects">
+          <article class="card">
             <h3>Sistema de compraVenta</h3>
-            <p>CompraVenta es una plataforma web de compra-venta de productos entre usuarios, desarrollada con Django.
-                Permite a los usuarios registrados publicar, gestionar y explorar productos organizados por categorías.
+            <p>
+              Plataforma web de compra-venta de productos entre usuarios,
+              desarrollada con Django. Permite publicar, gestionar y explorar
+              productos organizados por categorías.
             </p>
 
             <div class="tech-icons">
-                <img src="https://skillicons.dev/icons?i=html,bootstrap,django,sqlite&theme=light"
-                    alt="Tecnologías usadas">
+              <img
+                src="https://skillicons.dev/icons?i=html,bootstrap,django,sqlite&theme=light"
+                alt="Tecnologías usadas"
+              />
             </div>
 
-            <a href="https://github.com/fgonmar445/compraVenta" target="_blank">🔗 Ver repositorio</a>
-        </div>
+            <a href="https://github.com/fgonmar445/compraVenta" target="_blank"
+              >Ver repositorio ➔</a
+            >
+          </article>
 
-        <div class="card">
+          <article class="card">
             <h3>BookManager</h3>
-            <p>Aplicación web desarrollada en PHP siguiendo el patrón MVC, que permite gestionar una biblioteca de
-                libros mediante un CRUD completo. Incluye sistema de autenticación segura, protección CSRF, control de
-                intentos fallidos y confirmación de eliminación con SweetAlert2.</p>
+            <p>
+              Gestión de biblioteca con PHP MVC. Incluye sistema de
+              autenticación segura, protección CSRF y confirmación con
+              SweetAlert2.
+            </p>
 
             <div class="tech-icons">
-                <img src="https://skillicons.dev/icons?i=php,laravel,mysql,bootstrap&theme=light"
-                    alt="Tecnologías usadas">
+              <img
+                src="https://skillicons.dev/icons?i=php,laravel,mysql,bootstrap&theme=light"
+                alt="Tecnologías usadas"
+              />
             </div>
 
-            <a href="https://github.com/fgonmar445/BookManager" target="_blank">🔗 Ver repositorio</a>
-        </div>
+            <a href="https://github.com/fgonmar445/BookManager" target="_blank"
+              >Ver repositorio ➔</a
+            >
+          </article>
 
-        <div class="card">
+          <article class="card">
             <h3>Proyecto API</h3>
-            <p>API REST desarrollada con Laravel y Sanctum, que incluye autenticación, gestión de mascotas, gestión de
-                posts y filtrado avanzado de datos.</p>
+            <p>
+              API REST con Laravel y Sanctum. Autenticación, gestión de
+              mascotas, posts y filtrado avanzado.
+            </p>
 
             <div class="tech-icons">
-                <img src="https://skillicons.dev/icons?i=laravel,mysql,postman&theme=light" alt="Tecnologías usadas">
+              <img
+                src="https://skillicons.dev/icons?i=laravel,mysql,postman&theme=light"
+                alt="Tecnologías usadas"
+              />
             </div>
 
-            <a href="https://github.com/fgonmar445/Proyecto_API" target="_blank">🔗 Ver repositorio</a>
-        </div>
+            <a href="https://github.com/fgonmar445/Proyecto_API" target="_blank"
+              >Ver repositorio ➔</a
+            >
+          </article>
 
-
-        <div class="card">
+          <article class="card">
             <h3>GestorProductos</h3>
-            <p>Gestor de Productos es una aplicación web CRUD completa diseñada para administrar inventarios de
-                productos de manera eficiente y profesional. Construida con Laravel 12 y estilizada con Tailwind CSS,
-                ofrece una interfaz moderna, responsive y fácil de usar.</p>
+            <p>
+              CRUD completo para administración de inventarios con Laravel 12 y
+              Tailwind CSS. Interfaz moderna y responsive.
+            </p>
 
             <div class="tech-icons">
-                <img src="https://skillicons.dev/icons?i=laravel,tailwind,mysql&theme=light" alt="Tecnologías usadas">
+              <img
+                src="https://skillicons.dev/icons?i=laravel,tailwind,mysql&theme=light"
+                alt="Tecnologías usadas"
+              />
             </div>
 
-            <a href="https://github.com/fgonmar445/gestorProductos" target="_blank">🔗 Ver repositorio</a>
+            <a
+              href="https://github.com/fgonmar445/gestorProductos"
+              target="_blank"
+              >Ver repositorio ➔</a
+            >
+          </article>
         </div>
+      </section>
 
-
-
-    </div>
-
-    <!-- CONTACTO -->
-    <h2 id="contact">Contacto</h2>
-    <div class="contact-section">
-        <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
-        <div class="contact-links">
-            <a href="mailto:felipemarbouh@gmail.com">✉️ felipemarbouh@gmail.com</a>
-            <a href="https://linkedin.com/in/tu-perfil" target="_blank">💼 LinkedIn</a>
-            <a href="https://github.com/fgonmar445" target="_blank">🐙 GitHub</a>
-            <!-- <a href="https://twitter.com/tu-usuario" target="_blank">🐦 Twitter</a>-->
+      <!-- CONTACTO -->
+      <section id="contact">
+        <h2>Contacto</h2>
+        <div class="contact-section">
+          <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+          <div class="contact-links">
+            <a href="mailto:felipemarbouh@gmail.com">felipemarbouh@gmail.com</a>
+            <a href="https://linkedin.com/in/fgonmar" target="_blank"
+              >LinkedIn</a
+            >
+            <a href="https://github.com/fgonmar445" target="_blank">GitHub</a>
+          </div>
         </div>
-    </div>
+      </section>
+    </main>
 
     <footer>
-        © 2026 - Portfolio de fgonmar445 | Siempre aprendiendo 🚀
+      <p>© 2026 - Portfolio de fgonmar445 | Siempre aprendiendo 🚀</p>
     </footer>
 
-</body>
+    <script>
+      const text =
+        "Full-Stack Developer | Desarrollador web especializado en PHP, Python, Django, Java, MySQL y consumo de API REST.";
+      const typingSpeed = 50;
+      const element = document.getElementById("typing-text");
+      let i = 0;
 
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, typingSpeed);
+        }
+      }
+
+      window.onload = type;
+    </script>
+  </body>
 </html>
