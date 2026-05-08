@@ -99,8 +99,17 @@ nav {
 }
 
 #typing-text {
+  line-height: 1.6;
+}
+
+.accent-text {
   color: var(--accent-color);
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.white-text {
+  color: #ffffff;
+  font-weight: 400;
 }
 
 .cursor {

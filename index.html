@@ -235,16 +235,27 @@
     </footer>
 
     <script>
-      const text =
-        "Full-Stack Developer | Desarrollador web especializado en PHP, Python, Django, Java, MySQL y consumo de API REST.";
+      const part1 = "Full-Stack Developer";
+      const part2 = " | Desarrollador web especializado en PHP, Python, Django, Java, MySQL y consumo de API REST.";
       const typingSpeed = 50;
       const element = document.getElementById("typing-text");
       let i = 0;
+      let j = 0;
 
       function type() {
-        if (i < text.length) {
-          element.innerHTML += text.charAt(i);
+        if (i < part1.length) {
+          if (i === 0) {
+            element.innerHTML = '<span class="accent-text"></span>';
+          }
+          element.querySelector(".accent-text").innerHTML += part1.charAt(i);
           i++;
+          setTimeout(type, typingSpeed);
+        } else if (j < part2.length) {
+          if (j === 0) {
+            element.innerHTML += '<span class="white-text"></span>';
+          }
+          element.querySelector(".white-text").innerHTML += part2.charAt(j);
+          j++;
           setTimeout(type, typingSpeed);
         }
       }
