@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -9,222 +9,421 @@
       content="Portfolio de fgonmar445 - Desarrollador web especializado en PHP, Python, Django, Java, MySQL y consumo de API REST."
     />
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <link href="styles.css" rel="stylesheet" />
   </head>
 
   <body>
+    <!-- BACKGROUND PARTICLES -->
+    <div class="bg-wrapper">
+      <canvas id="particles-canvas"></canvas>
+      <div class="bg-glow"></div>
+    </div>
+
     <!-- NAVEGACIÓN -->
-    <nav>
-      <a href="#" class="logo">fgonmar445</a>
-      <div class="nav-links">
-        <a href="#about">Sobre Mí</a>
-        <a href="#skills">Habilidades</a>
-        <a href="#projects">Proyectos</a>
-        <a href="#contact">Contacto</a>
+    <nav class="glass-nav">
+      <a href="#" class="logo">
+        <span class="logo-bracket">&lt;</span>fgonmar445<span class="logo-bracket">/&gt;</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#about" class="nav-link-item"><i data-lucide="user" class="nav-icon"></i> Sobre Mí</a>
+        <a href="#skills" class="nav-link-item"><i data-lucide="cpu" class="nav-icon"></i> Habilidades</a>
+        <a href="#projects" class="nav-link-item"><i data-lucide="folder-git-2" class="nav-icon"></i> Proyectos</a>
+        <a href="#contact" class="nav-link-item"><i data-lucide="mail" class="nav-icon"></i> Contacto</a>
       </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </nav>
+
+    <!-- MOBILE DRAWER OVERLAY -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
 
     <!-- HERO -->
     <header class="hero">
-      <h1>
-        Hola, soy <span style="color: var(--accent-color)">fgonmar445</span>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>Disponible para nuevos proyectos
+      </div>
+      <h1 class="hero-title">
+        Hola, soy <span class="gradient-text">fgonmar445</span>
       </h1>
       <div class="typing-container">
         <span id="typing-text"></span><span class="cursor">|</span>
       </div>
 
       <div class="cta-buttons">
-        <a href="#projects" class="btn btn-primary">Proyectos</a>
+        <a href="#projects" class="btn btn-primary">
+          <i data-lucide="layout-grid"></i> Proyectos
+        </a>
         <a
           href="https://github.com/fgonmar445"
           class="btn btn-secondary"
           target="_blank"
-          >GitHub</a
         >
-        <a href="mailto:felipemarbouh@gmail.com" class="btn btn-secondary"
-          >Contacto: felipemarbouh@gmail.com</a
-        >
+          <i data-lucide="github"></i> GitHub
+        </a>
+        <button class="btn btn-secondary btn-copy-email" id="btn-copy-email" data-email="felipemarbouh@gmail.com">
+          <i data-lucide="copy" id="copy-icon"></i> <span id="copy-text">Copiar Correo</span>
+        </button>
+      </div>
+      
+      <div class="scroll-indicator">
+        <span class="mouse-icon">
+          <span class="wheel"></span>
+        </span>
+        <span class="scroll-text">Desliza para ver más</span>
       </div>
     </header>
 
-    <main>
+    <main class="container">
       <!-- SOBRE MÍ -->
-      <section id="about" class="about">
-        <h2>Sobre Mí</h2>
-        <p>
-          Soy estudiante de 2º de Desarrollo de Aplicaciones Web con
-          <strong>experiencia práctica</strong>
-          en proyectos reales tanto frontend como backend.
-        </p>
-        <p>
-          Me especializo en crear aplicaciones web modernas, responsivas y
-          escalables. Actualmente profundizando en
-          <strong>React, Node.js y arquitecturas cloud</strong>.
-        </p>
-        <p>
-          <strong>Objetivo:</strong> Convertirme en un desarrollador full-stack
-          senior capaz de liderar proyectos de alto impacto.
-        </p>
+      <section id="about" class="about-section">
+        <div class="section-header">
+          <h2 class="section-title">Sobre Mí</h2>
+          <p class="section-subtitle">Conoce mi trayectoria y metas profesionales</p>
+        </div>
+        
+        <div class="about-grid">
+          <div class="about-info-card glass-card">
+            <div class="info-icon-wrapper">
+              <i data-lucide="code-2" class="info-icon"></i>
+            </div>
+            <p>
+              Soy estudiante de 2º de Desarrollo de Aplicaciones Web con
+              <strong>experiencia práctica</strong>
+              en proyectos reales tanto frontend como backend.
+            </p>
+            <p>
+              Me especializo en crear aplicaciones web modernas, responsivas y
+              escalables. Actualmente profundizando en
+              <strong>React, Node.js y arquitecturas cloud</strong>.
+            </p>
+            <div class="objective-box">
+              <i data-lucide="rocket" class="objective-icon"></i>
+              <div>
+                <strong>Objetivo:</strong>
+                <span>Convertirme en un desarrollador full-stack senior capaz de liderar proyectos de alto impacto.</span>
+              </div>
+            </div>
+          </div>
 
-        <!-- ESTADÍSTICAS -->
-        <div class="stats">
-          <div class="stat-item">
-            <h3>15+</h3>
-            <p>Proyectos Completados</p>
-          </div>
-          <div class="stat-item">
-            <h3>4</h3>
-            <p>Tecnologías Dominadas</p>
-          </div>
-          <div class="stat-item">
-            <h3>150+</h3>
-            <p>Commits en GitHub</p>
+          <!-- ESTADÍSTICAS -->
+          <div class="stats-container">
+            <div class="stat-item glass-card">
+              <div class="stat-icon-wrapper"><i data-lucide="check-circle-2"></i></div>
+              <h3>15+</h3>
+              <p>Proyectos Completados</p>
+            </div>
+            <div class="stat-item glass-card">
+              <div class="stat-icon-wrapper"><i data-lucide="layers"></i></div>
+              <h3>4+</h3>
+              <p>Tecnologías Principales</p>
+            </div>
+            <div class="stat-item glass-card">
+              <div class="stat-icon-wrapper"><i data-lucide="git-commit"></i></div>
+              <h3>150+</h3>
+              <p>Commits en GitHub</p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- HABILIDADES -->
-      <section id="skills">
-        <h2>Mis Habilidades</h2>
+      <section id="skills" class="skills-section">
+        <div class="section-header">
+          <h2 class="section-title">Mis Habilidades</h2>
+          <p class="section-subtitle">Tecnologías y herramientas que domino</p>
+        </div>
+        
         <div class="skills-grid">
-          <div class="skill-card">
-            <img
-              src="https://skillicons.dev/icons?i=html,css,js,ts"
-              alt="Frontend"
-            />
+          <div class="skill-card glass-card">
+            <div class="skill-header">
+              <img
+                src="https://skillicons.dev/icons?i=html,css,js,ts"
+                alt="Frontend"
+              />
+            </div>
             <h4>Frontend</h4>
-            <p>HTML5, CSS3, JavaScript ES6+, TypeScript</p>
+            <p>Diseño fluido y estructurado de interfaces con HTML5, CSS3, JavaScript ES6+ y TypeScript.</p>
           </div>
-          <div class="skill-card">
-            <img
-              src="https://skillicons.dev/icons?i=react,angular,vue"
-              alt="Frameworks"
-            />
+          
+          <div class="skill-card glass-card">
+            <div class="skill-header">
+              <img
+                src="https://skillicons.dev/icons?i=react,angular,vue"
+                alt="Frameworks"
+              />
+            </div>
             <h4>Frameworks</h4>
-            <p>React, Angular, Vue.js</p>
+            <p>Construcción de Single Page Applications con React, Angular y exploración de Vue.js.</p>
           </div>
-          <div class="skill-card">
-            <img
-              src="https://skillicons.dev/icons?i=nodejs,php,java,python"
-              alt="Backend"
-            />
+          
+          <div class="skill-card glass-card">
+            <div class="skill-header">
+              <img
+                src="https://skillicons.dev/icons?i=nodejs,php,java,python"
+                alt="Backend"
+              />
+            </div>
             <h4>Backend</h4>
-            <p>Node.js, PHP, Java, Python</p>
+            <p>Desarrollo de lógica robusta del lado del servidor usando Node.js, PHP, Java y Python.</p>
           </div>
-          <div class="skill-card">
-            <img
-              src="https://skillicons.dev/icons?i=mysql,postgres,mongodb"
-              alt="Databases"
-            />
+          
+          <div class="skill-card glass-card">
+            <div class="skill-header">
+              <img
+                src="https://skillicons.dev/icons?i=mysql,postgres,mongodb"
+                alt="Databases"
+              />
+            </div>
             <h4>Bases de Datos</h4>
-            <p>MySQL, PostgreSQL, MongoDB</p>
+            <p>Diseño, optimización y consultas relacionales y no relacionales en MySQL, PostgreSQL y MongoDB.</p>
           </div>
         </div>
       </section>
 
       <!-- PROYECTOS -->
-      <section id="projects">
-        <h2>Proyectos Destacados</h2>
-        <div class="projects">
-          <article class="card">
-            <h3>Sistema de compraVenta</h3>
-            <p>
-              Plataforma web de compra-venta de productos entre usuarios,
-              desarrollada con Django. Permite publicar, gestionar y explorar
-              productos organizados por categorías.
-            </p>
+      <section id="projects" class="projects-section">
+        <div class="section-header">
+          <h2 class="section-title">Proyectos Destacados</h2>
+          <p class="section-subtitle">Una selección de mis trabajos más recientes y relevantes</p>
+        </div>
 
-            <div class="tech-icons">
-              <img
-                src="https://skillicons.dev/icons?i=html,bootstrap,django,sqlite&theme=light"
-                alt="Tecnologías usadas"
-              />
+        <!-- Filtros de Proyectos -->
+        <div class="projects-filter-wrapper">
+          <div class="filter-chips">
+            <button class="filter-chip active" data-filter="all">Todos</button>
+            <button class="filter-chip" data-filter="laravel">Laravel/PHP</button>
+            <button class="filter-chip" data-filter="springboot">Spring Boot</button>
+            <button class="filter-chip" data-filter="django">Django</button>
+            <button class="filter-chip" data-filter="databases">Bases de Datos</button>
+          </div>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Proyecto 1 (Más Reciente) -->
+          <article class="project-card glass-card" data-categories="laravel databases">
+            <div class="project-content">
+              <div class="project-type-badge">Laravel 12 / Full-Stack</div>
+              <h3>Cookly</h3>
+              <p>
+                Plataforma web (TFG de DAW) para la gestión de despensas, recomendación y exploración de recetas. Integra TheMealDB API con traducción dinámica en tiempo real, control de stock asíncrono y panel de administración con registro de auditoría.
+              </p>
+
+              <div class="tech-icons">
+                <img
+                  src="https://skillicons.dev/icons?i=laravel,tailwind,mysql,alpinejs,php&theme=dark"
+                  alt="Tecnologías usadas"
+                />
+              </div>
+
+              <div class="project-link-wrapper">
+                <a href="https://github.com/fgonmar445/cookly" class="project-link" target="_blank">
+                  Ver repositorio <i data-lucide="arrow-up-right"></i>
+                </a>
+              </div>
             </div>
-
-            <a href="https://github.com/fgonmar445/compraVenta" target="_blank"
-              >Ver repositorio ➔</a
-            >
           </article>
 
-          <article class="card">
-            <h3>BookManager</h3>
-            <p>
-              Gestión de biblioteca con PHP MVC. Incluye sistema de
-              autenticación segura, protección CSRF y confirmación con
-              SweetAlert2.
-            </p>
+          <!-- Proyecto 2 (En Desarrollo) -->
+          <article class="project-card glass-card" data-categories="springboot databases">
+            <div class="project-content">
+              <div class="project-type-badge">Spring Boot / Angular (En Desarrollo)</div>
+              <h3>WorkTeam</h3>
+              <p>
+                Plataforma de gestión de proyectos y tareas estilo Jira. Diseñada para equipos de trabajo eficientes, incluye control de roles, gestión de subtareas, sistema de comentarios, archivos adjuntos y un tablero Kanban interactivo.
+              </p>
 
-            <div class="tech-icons">
-              <img
-                src="https://skillicons.dev/icons?i=php,laravel,mysql,bootstrap&theme=light"
-                alt="Tecnologías usadas"
-              />
+              <div class="tech-icons">
+                <img
+                  src="https://skillicons.dev/icons?i=spring,angular,mysql,ts,java&theme=dark"
+                  alt="Tecnologías usadas"
+                />
+              </div>
+
+              <div class="project-link-wrapper">
+                <a href="https://github.com/fgonmar445/WorkTeam" class="project-link" target="_blank">
+                  Ver repositorio <i data-lucide="arrow-up-right"></i>
+                </a>
+              </div>
             </div>
-
-            <a href="https://github.com/fgonmar445/BookManager" target="_blank"
-              >Ver repositorio ➔</a
-            >
           </article>
 
-          <article class="card">
-            <h3>Proyecto API</h3>
-            <p>
-              API REST con Laravel y Sanctum. Autenticación, gestión de
-              mascotas, posts y filtrado avanzado.
-            </p>
+          <!-- Proyecto 3 -->
+          <article class="project-card glass-card" data-categories="django">
+            <div class="project-content">
+              <div class="project-type-badge">Python / Django</div>
+              <h3>Sistema de compraVenta</h3>
+              <p>
+                Plataforma web de compra-venta de productos entre usuarios,
+                desarrollada con Django. Permite publicar, gestionar y explorar
+                productos organizados por categorías.
+              </p>
 
-            <div class="tech-icons">
-              <img
-                src="https://skillicons.dev/icons?i=laravel,mysql,postman&theme=light"
-                alt="Tecnologías usadas"
-              />
+              <div class="tech-icons">
+                <img
+                  src="https://skillicons.dev/icons?i=html,bootstrap,django,sqlite&theme=dark"
+                  alt="Tecnologías usadas"
+                />
+              </div>
+
+              <div class="project-link-wrapper">
+                <a href="https://github.com/fgonmar445/compraVenta" class="project-link" target="_blank">
+                  Ver repositorio <i data-lucide="arrow-up-right"></i>
+                </a>
+              </div>
             </div>
-
-            <a href="https://github.com/fgonmar445/Proyecto_API" target="_blank"
-              >Ver repositorio ➔</a
-            >
           </article>
 
-          <article class="card">
-            <h3>GestorProductos</h3>
-            <p>
-              CRUD completo para administración de inventarios con Laravel 12 y
-              Tailwind CSS. Interfaz moderna y responsive.
-            </p>
+          <!-- Proyecto 4 -->
+          <article class="project-card glass-card" data-categories="laravel">
+            <div class="project-content">
+              <div class="project-type-badge">PHP / MVC</div>
+              <h3>BookManager</h3>
+              <p>
+                Gestión de biblioteca con PHP MVC. Incluye sistema de
+                autenticación segura, protección CSRF y confirmación con
+                SweetAlert2.
+              </p>
 
-            <div class="tech-icons">
-              <img
-                src="https://skillicons.dev/icons?i=laravel,tailwind,mysql&theme=light"
-                alt="Tecnologías usadas"
-              />
+              <div class="tech-icons">
+                <img
+                  src="https://skillicons.dev/icons?i=php,laravel,mysql,bootstrap&theme=dark"
+                  alt="Tecnologías usadas"
+                />
+              </div>
+
+              <div class="project-link-wrapper">
+                <a href="https://github.com/fgonmar445/BookManager" class="project-link" target="_blank">
+                  Ver repositorio <i data-lucide="arrow-up-right"></i>
+                </a>
+              </div>
             </div>
+          </article>
 
-            <a
-              href="https://github.com/fgonmar445/gestorProductos"
-              target="_blank"
-              >Ver repositorio ➔</a
-            >
+          <!-- Proyecto 5 -->
+          <article class="project-card glass-card" data-categories="laravel databases">
+            <div class="project-content">
+              <div class="project-type-badge">Laravel / API REST</div>
+              <h3>Proyecto API</h3>
+              <p>
+                API REST con Laravel y Sanctum. Autenticación, gestión de
+                mascotas, posts y filtrado avanzado.
+              </p>
+
+              <div class="tech-icons">
+                <img
+                  src="https://skillicons.dev/icons?i=laravel,mysql,postman&theme=dark"
+                  alt="Tecnologías usadas"
+                />
+              </div>
+
+              <div class="project-link-wrapper">
+                <a href="https://github.com/fgonmar445/Proyecto_API" class="project-link" target="_blank">
+                  Ver repositorio <i data-lucide="arrow-up-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 6 -->
+          <article class="project-card glass-card" data-categories="laravel">
+            <div class="project-content">
+              <div class="project-type-badge">Laravel 12 / Tailwind</div>
+              <h3>GestorProductos</h3>
+              <p>
+                CRUD completo para administración de inventarios con Laravel 12 y
+                Tailwind CSS. Interfaz moderna y responsive.
+              </p>
+
+              <div class="tech-icons">
+                <img
+                  src="https://skillicons.dev/icons?i=laravel,tailwind,mysql&theme=dark"
+                  alt="Tecnologías usadas"
+                />
+              </div>
+
+              <div class="project-link-wrapper">
+                <a href="https://github.com/fgonmar445/gestorProductos" class="project-link" target="_blank">
+                  Ver repositorio <i data-lucide="arrow-up-right"></i>
+                </a>
+              </div>
+            </div>
           </article>
         </div>
       </section>
 
       <!-- CONTACTO -->
-      <section id="contact">
-        <h2>Contacto</h2>
-        <div class="contact-section">
-          <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
-          <div class="contact-links">
-            <a href="mailto:felipemarbouh@gmail.com">felipemarbouh@gmail.com</a>
-            <a href="https://linkedin.com/in/fgonmar" target="_blank"
-              >LinkedIn</a
-            >
-            <a href="https://github.com/fgonmar445" target="_blank">GitHub</a>
+      <section id="contact" class="contact-section">
+        <div class="section-header">
+          <h2 class="section-title">Contacto</h2>
+          <p class="section-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+        </div>
+        
+        <div class="contact-grid">
+          <div class="contact-card glass-card">
+            <h3>Información de Contacto</h3>
+            <p class="contact-intro">No dudes en ponerte en contacto conmigo a través de cualquiera de estos canales o enviándome un mensaje directo.</p>
+            
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <div class="method-icon-box"><i data-lucide="mail"></i></div>
+                <div>
+                  <span class="method-label">Correo Electrónico</span>
+                  <a href="mailto:felipemarbouh@gmail.com" class="method-value">felipemarbouh@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="contact-method-item">
+                <div class="method-icon-box"><i data-lucide="linkedin"></i></div>
+                <div>
+                  <span class="method-label">LinkedIn</span>
+                  <a href="https://linkedin.com/in/fgonmar" target="_blank" class="method-value">linkedin.com/in/fgonmar</a>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon-box"><i data-lucide="github"></i></div>
+                <div>
+                  <span class="method-label">GitHub</span>
+                  <a href="https://github.com/fgonmar445" target="_blank" class="method-value">github.com/fgonmar445</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card glass-card">
+            <h3>Enviar un Mensaje</h3>
+            <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); handleFormSubmit();">
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" required placeholder="Tu nombre" />
+              </div>
+              <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" required placeholder="tu@email.com" />
+              </div>
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" required rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span>Enviar mensaje</span> <i data-lucide="send"></i>
+              </button>
+              <div id="form-feedback" class="form-feedback"></div>
+            </form>
           </div>
         </div>
       </section>
@@ -234,10 +433,15 @@
       <p>© 2026 - Portfolio de fgonmar445 | Siempre aprendiendo 🚀</p>
     </footer>
 
+    <!-- INTERACTION LOGIC & EFFECTS -->
     <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Typing Effect
       const part1 = "Full-Stack Developer";
       const part2 = " | Desarrollador web especializado en PHP, Python, Django, Java, MySQL y consumo de API REST.";
-      const typingSpeed = 50;
+      const typingSpeed = 40;
       const element = document.getElementById("typing-text");
       let i = 0;
       let j = 0;
@@ -259,8 +463,222 @@
           setTimeout(type, typingSpeed);
         }
       }
+      
+      window.addEventListener('load', type);
 
-      window.onload = type;
+      // Particles Canvas Effect
+      const canvas = document.getElementById('particles-canvas');
+      const ctx = canvas.getContext('2d');
+
+      let width = canvas.width = window.innerWidth;
+      let height = canvas.height = window.innerHeight;
+
+      const particles = [];
+      const particleCount = Math.min(60, Math.floor((width * height) / 25000));
+      const mouse = { x: null, y: null, radius: 150 };
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      window.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.4;
+          this.vy = (Math.random() - 0.5) * 0.4;
+          this.radius = Math.random() * 2 + 1;
+          this.baseAlpha = Math.random() * 0.3 + 0.15;
+          this.alpha = this.baseAlpha;
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+
+          // Mouse interaction
+          if (mouse.x !== null && mouse.y !== null) {
+            const dx = mouse.x - this.x;
+            const dy = mouse.y - this.y;
+            const dist = Math.hypot(dx, dy);
+
+            if (dist < mouse.radius) {
+              const force = (mouse.radius - dist) / mouse.radius;
+              this.x -= (dx / dist) * force * 2;
+              this.y -= (dy / dist) * force * 2;
+              this.alpha = Math.min(0.8, this.baseAlpha + force * 0.5);
+            } else {
+              if (this.alpha > this.baseAlpha) {
+                this.alpha -= 0.01;
+              }
+            }
+          } else {
+            if (this.alpha > this.baseAlpha) {
+              this.alpha -= 0.01;
+            }
+          }
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(99, 102, 241, ${this.alpha})`;
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.hypot(dx, dy);
+
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              const alpha = (120 - dist) / 120 * 0.07;
+              ctx.strokeStyle = `rgba(99, 102, 241, ${alpha})`;
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      // Mobile Drawer Toggle
+      const navToggle = document.getElementById('nav-toggle');
+      const navLinks = document.getElementById('nav-links');
+      const drawerOverlay = document.getElementById('drawer-overlay');
+      
+      function toggleMenu() {
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        drawerOverlay.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+      }
+
+      navToggle.addEventListener('click', toggleMenu);
+      drawerOverlay.addEventListener('click', toggleMenu);
+
+      // Close menu when clicking link
+      document.querySelectorAll('.nav-link-item').forEach(link => {
+        link.addEventListener('click', () => {
+          if (navLinks.classList.contains('active')) {
+            toggleMenu();
+          }
+        });
+      });
+
+      // Shrink Nav on Scroll
+      window.addEventListener('scroll', () => {
+        const nav = document.querySelector('.glass-nav');
+        if (window.scrollY > 50) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      });
+
+      // Projects Category Filter
+      const filterChips = document.querySelectorAll('.filter-chip');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          filterChips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+
+          const filterValue = chip.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            const categories = card.getAttribute('data-categories').split(' ');
+            if (filterValue === 'all' || categories.includes(filterValue)) {
+              card.style.display = 'flex';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0) scale(1)';
+              }, 50);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(10px) scale(0.95)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+
+      // Copy Email to Clipboard
+      const copyBtn = document.getElementById('btn-copy-email');
+      const copyIcon = document.getElementById('copy-icon');
+      const copyText = document.getElementById('copy-text');
+
+      copyBtn.addEventListener('click', () => {
+        const email = copyBtn.getAttribute('data-email');
+        navigator.clipboard.writeText(email).then(() => {
+          // Success Feedback
+          copyText.textContent = '¡Correo Copiado!';
+          copyIcon.setAttribute('data-lucide', 'check');
+          lucide.createIcons();
+          copyBtn.classList.add('success');
+
+          setTimeout(() => {
+            copyText.textContent = 'Copiar Correo';
+            copyIcon.setAttribute('data-lucide', 'copy');
+            lucide.createIcons();
+            copyBtn.classList.remove('success');
+          }, 2000);
+        }).catch(err => {
+          console.error('Error al copiar: ', err);
+        });
+      });
+
+      // Handle Form Submit (Simulation)
+      function handleFormSubmit() {
+        const nameVal = document.getElementById('name').value;
+        const feedback = document.getElementById('form-feedback');
+        feedback.className = 'form-feedback success';
+        feedback.textContent = `¡Gracias, ${nameVal}! Tu mensaje ha sido enviado simuladamente con éxito.`;
+        document.getElementById('contact-form').reset();
+
+        setTimeout(() => {
+          feedback.style.opacity = '0';
+          setTimeout(() => {
+            feedback.textContent = '';
+            feedback.className = 'form-feedback';
+            feedback.style.opacity = '1';
+          }, 300);
+        }, 5000);
+      }
     </script>
   </body>
 </html>
