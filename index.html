@@ -412,33 +412,51 @@
     // Initialize Lucide Icons
     lucide.createIcons();
 
-    // Typing Effect
-    const part1 = "Full-Stack Developer";
-    const part2 = " | Desarrollador web especializado en PHP, Python, Django, Java, MySQL y consumo de API REST.";
-    const typingSpeed = 80;
+    // Typing Effect — uses requestAnimationFrame + insertAdjacentText for smooth, jank-free rendering
+    const fullText = "Full-Stack Developer | Desarrollador web especializado en PHP, Python, Django, Java, MySQL y consumo de API REST.";
+    const splitAt = "Full-Stack Developer".length;
+    const typingDelay = 75; // ms per character
     const element = document.getElementById("typing-text");
-    let i = 0;
-    let j = 0;
 
-    function type() {
-      if (i < part1.length) {
-        if (i === 0) {
-          element.innerHTML = '<span class="accent-text"></span>';
+    let charIndex = 0;
+    let lastTime = null;
+    let span1 = null;
+    let span2 = null;
+
+    function typeFrame(timestamp) {
+      if (!lastTime) lastTime = timestamp;
+      const elapsed = timestamp - lastTime;
+
+      if (elapsed >= typingDelay) {
+        lastTime = timestamp;
+
+        if (charIndex === 0) {
+          span1 = document.createElement('span');
+          span1.className = 'accent-text';
+          span2 = document.createElement('span');
+          span2.className = 'white-text';
+          element.innerHTML = '';
+          element.appendChild(span1);
+          element.appendChild(span2);
         }
-        element.querySelector(".accent-text").innerHTML += part1.charAt(i);
-        i++;
-        setTimeout(type, typingSpeed);
-      } else if (j < part2.length) {
-        if (j === 0) {
-          element.innerHTML += '<span class="white-text"></span>';
+
+        if (charIndex < fullText.length) {
+          const ch = fullText.charAt(charIndex);
+          if (charIndex < splitAt) {
+            span1.insertAdjacentText('beforeend', ch);
+          } else {
+            span2.insertAdjacentText('beforeend', ch);
+          }
+          charIndex++;
         }
-        element.querySelector(".white-text").innerHTML += part2.charAt(j);
-        j++;
-        setTimeout(type, typingSpeed);
+      }
+
+      if (charIndex < fullText.length) {
+        requestAnimationFrame(typeFrame);
       }
     }
 
-    window.addEventListener('load', type);
+    window.addEventListener('load', () => requestAnimationFrame(typeFrame));
 
     // Particles Canvas Effect
     const canvas = document.getElementById('particles-canvas');
